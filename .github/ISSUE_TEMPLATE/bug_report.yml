@@ -1,0 +1,225 @@
+name: Bug report
+description: Report reproducible incorrect behavior in a csi-rs project
+title: "[Bug]: "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug.
+
+        Please provide the smallest practical reproduction and enough environment
+        information for someone else to reproduce the problem.
+
+        Do not publicly report security vulnerabilities here. Follow the
+        organization security policy instead.
+
+  - type: checkboxes
+    id: preliminary-checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues for the same problem.
+          required: true
+        - label: This report does not disclose a security vulnerability.
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly describe the incorrect behavior.
+      placeholder: What went wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: |
+        Provide the smallest program, configuration, input, and sequence of
+        commands that reproduces the problem. Link to a minimal repository when
+        multiple files are required.
+      placeholder: |
+        1. Build with ...
+        2. Flash or run ...
+        3. Send or collect ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide the affected release, crate version, or commit SHA.
+      placeholder: v0.3.0, esp-csi-rs 0.3.0, or commit 0123abcd
+    validations:
+      required: true
+
+  - type: input
+    id: rust-version
+    attributes:
+      label: Rust toolchain
+      description: Paste the output of `rustc --version --verbose` when possible.
+      placeholder: rustc 1.xx.x or esp toolchain version
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Host operating system
+      placeholder: Fedora 44, Ubuntu 24.04, macOS 15, Windows 11, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: embedded-environment
+    attributes:
+      label: ESP hardware and embedded environment
+      description: Complete this section when the issue involves an ESP device.
+      placeholder: |
+        Chip: ESP32-C6
+        Board: ESP32-C6-DevKitC-1
+        Rust target: riscv32imac-unknown-none-elf
+        Framework/HAL: esp-hal ...
+        Enabled Cargo features: ...
+        Flashing tool: espflash ...
+        Wi-Fi mode and relevant configuration: ...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and diagnostic output
+      description: |
+        Include relevant compiler output, panic messages, backtraces, serial
+        output, server logs, or packet/data details. Remove credentials and
+        sensitive information before submitting.
+      placeholder: Paste logs here or attach a log file.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Add anything else that may help, such as screenshots, traces, hardware
+        wiring, related issues, or whether the problem is a regression.
+```
+
+### `.github/ISSUE_TEMPLATE/feature_request.yml`
+
+```yaml
+name: Feature request
+description: Propose an improvement or new capability for a csi-rs project
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement.
+
+        Describe the underlying problem before describing a particular
+        implementation. This helps us consider alternative solutions and the
+        effect on the wider csi-rs ecosystem.
+
+  - type: checkboxes
+    id: preliminary-checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and discussions for a similar proposal.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What limitation, use case, or developer problem should be addressed?
+      placeholder: Explain who encounters the problem and under what circumstances.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the behavior, API, protocol, or capability you are proposing.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-areas
+    attributes:
+      label: Affected areas
+      description: Select every part of the ecosystem that may be affected.
+      multiple: true
+      options:
+        - Embedded library or driver
+        - ESP firmware or CLI
+        - Host-side library or application
+        - Device-to-host protocol
+        - CSI data format or storage
+        - Public Rust API
+        - Documentation or examples
+        - Build, CI, or development tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility impact
+      description: |
+        Describe any effect on existing APIs, firmware, clients, servers,
+        serialized data, supported chips, feature flags, or stored datasets.
+      placeholder: State "No expected compatibility impact" when appropriate.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe other approaches, workarounds, or designs you considered.
+
+  - type: dropdown
+    id: implementation
+    attributes:
+      label: Implementation interest
+      description: Would you be interested in implementing this change?
+      options:
+        - Yes, I can submit a pull request
+        - Yes, with design or implementation guidance
+        - No, I am only proposing the feature
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Add relevant examples, research, protocol diagrams, API sketches,
+        hardware constraints, or links to related work.
