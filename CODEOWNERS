@@ -1,2 +1,19 @@
-# Catch-all default fallback owner for the entire repository
-*                                       @stacks-of-data
+# CODEOWNERS for csi-rs/.github
+#
+# This repository holds the organization profile and the default community
+# health files (Code of Conduct, etc.) that GitHub applies to every csi-rs
+# repository that does not define its own. Changes here affect the whole
+# organization, so they require review from an organization admin.
+#
+# Later rules take precedence over earlier ones.
+# Docs: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in this repository
+*                       @VoidReg @theembeddedrustacean
+
+# Organization profile shown at https://github.com/csi-rs
+/profile/               @VoidReg @theembeddedrustacean
+
+# Community health files and governance
+/CODE_OF_CONDUCT.md     @VoidReg @theembeddedrustacean
+/CODEOWNERS             @VoidReg @theembeddedrustacean
