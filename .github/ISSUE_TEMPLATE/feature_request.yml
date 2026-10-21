@@ -1,0 +1,94 @@
+name: Feature request
+description: Propose an improvement or new capability for a csi-rs project
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement.
+
+        Describe the underlying problem before describing a particular
+        implementation. This helps us consider alternative solutions and the
+        effect on the wider csi-rs ecosystem.
+
+  - type: checkboxes
+    id: preliminary-checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and discussions for a similar proposal.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What limitation, use case, or developer problem should be addressed?
+      placeholder: Explain who encounters the problem and under what circumstances.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the behavior, API, protocol, or capability you are proposing.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-areas
+    attributes:
+      label: Affected areas
+      description: Select every part of the ecosystem that may be affected.
+      multiple: true
+      options:
+        - Embedded library or driver
+        - ESP firmware or CLI
+        - Host-side library or application
+        - Device-to-host protocol
+        - CSI data format or storage
+        - Public Rust API
+        - Documentation or examples
+        - Build, CI, or development tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility impact
+      description: |
+        Describe any effect on existing APIs, firmware, clients, servers,
+        serialized data, supported chips, feature flags, or stored datasets.
+      placeholder: State "No expected compatibility impact" when appropriate.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe other approaches, workarounds, or designs you considered.
+
+  - type: dropdown
+    id: implementation
+    attributes:
+      label: Implementation interest
+      description: Would you be interested in implementing this change?
+      options:
+        - Yes, I can submit a pull request
+        - Yes, with design or implementation guidance
+        - No, I am only proposing the feature
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Add relevant examples, research, protocol diagrams, API sketches,
+        hardware constraints, or links to related work.
