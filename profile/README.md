@@ -1,6 +1,9 @@
 <div align="center">
 
-# csi-rs
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/csi-rs/.github/main/brand/svg/csi-rs-stacked-dark.svg">
+  <img alt="csi-rs" src="https://raw.githubusercontent.com/csi-rs/.github/main/brand/svg/csi-rs-stacked-light.svg" width="360">
+</picture>
 
 **Open-source Rust tooling for Wi-Fi Channel State Information (CSI) on ESP32 devices**
 
